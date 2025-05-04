@@ -6,6 +6,7 @@ current_user = None
 
 
 def get_positive_amount(prompt):
+    '''Input validation for deposit and withdraw'''
     try:
         amount = float(input(prompt))
         if amount <= 0:
