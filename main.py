@@ -7,7 +7,7 @@ current_user = None
 
 def get_positive_amount(prompt):
     try:
-        amount = int(input(prompt))
+        amount = float(input(prompt))
         if amount <= 0:
             raise ValueError
         return amount
@@ -112,6 +112,7 @@ def user_menu():
             amount = get_positive_amount("Enter amount you want to deposit: ")
             if amount is None:
                 continue
+
             current_balance = database.get_user_balance_by_id(current_user[0])
             database.update_balance(current_user[0], current_balance + amount)
             print(f"Deposited {amount}€. New balance: {round(database.get_user_balance_by_id(current_user[0]), 2)}€")
