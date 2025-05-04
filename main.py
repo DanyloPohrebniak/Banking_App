@@ -11,9 +11,9 @@ def get_positive_amount(prompt):
         amount = float(input(prompt))
         if amount <= 0:
             raise ValueError
-        return amount
-    except ValueError:
-        print("Invalid amount. Must be a positive number.")
+        return  round(amount, 2)
+    except (ValueError, TypeError):
+        print("Invalid amount. Must be a positive number. Max ")
         return None
 
 
