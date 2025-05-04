@@ -8,12 +8,18 @@ current_user = None
 def get_positive_amount(prompt):
     '''Input validation for deposit and withdraw'''
     try:
-        amount = float(input(prompt))
+        user_input = input(prompt)
+        # Allow only positive numbers with max 2 decimal places
+        if not re.fullmatch(r"\d+(\.\d{1,2})?", user_input):
+            raise ValueError
+
+        amount = float(user_input)
         if amount <= 0:
             raise ValueError
-        return  round(amount, 2)
+
+        return amount
     except (ValueError, TypeError):
-        print("Invalid amount. Must be a positive number. Max ")
+        print("Invalid amount. Must be a positive number with max 2 decimal places.")
         return None
 
 
