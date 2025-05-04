@@ -3,13 +3,6 @@ import random
 import hashlib
 
 
-# def check_login(current_user):
-#     if current_user is None:
-#         print("You have to log in or create new account!")
-#         return False
-#     return True
-
-
 def generate_mfa_code():
     '''Generate the MFA code'''
     return str(random.randint(100000, 999999))

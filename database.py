@@ -23,8 +23,8 @@ def init_db():
     print("Table created successfully")
 
     users = [
-        ('Alisa', 2000, security.hash_password("1234"), 123456),
-        ('Danya', 5000, security.hash_password("1234"), 111111)
+        ('Alisa', 2000, security.hash_password("1234qq"), 123456),
+        ('Danya', 5000, security.hash_password("1234qw"), 111111)
     ]
 
     cur.executemany("INSERT INTO customers (NAME, BALANCE, PASSWORD_HASH, MFA_CODE) VALUES ( ?, ?, ?, ?)", users)
