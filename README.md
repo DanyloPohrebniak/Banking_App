@@ -1,4 +1,4 @@
-# Banking App
+# Banking App by Danylo Pohrebniak(L00186153)
 
 ## To run unit test (in terminal):
 _python -m unittest test_security.py_
